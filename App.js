@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Button } from 'react-native';
-import Homestack from './routes/Homestack';
+import Homestack from './src/Navigation/Homestack';
 
 
 
