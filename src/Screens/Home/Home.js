@@ -4,7 +4,14 @@ import { View, Text, Button } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 //import DatePicker from 'react-native-datepicker';
 import navigationstrings from '../constants/constants';
-export default function Home() {
+export default function Home({navigation,route}) {
+  React.useEffect(() => {
+    if (route.params?.text) {
+      // Post updated, do something with `route.params.post`
+      // For example, send the post to the server
+    }
+  }, [route.params?.text]);
+
   const extnavigation=useNavigation();
     const [selectedday, setSelectedday] = useState('');
     const changedate = (day) => {
@@ -28,6 +35,7 @@ export default function Home() {
             },
           }}
         />
+         <Text style={{ margin: 10 }}>Eventdetails: {route.params?.text}</Text>
         <Button
           title="Go to Agenda"
           onPress={gotoScreen}
