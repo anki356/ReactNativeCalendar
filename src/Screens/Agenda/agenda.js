@@ -1,24 +1,23 @@
-import React from 'react'
-import { useState } from "react";
+import React, { useState } from 'react';
 import { View, Text } from 'react-native'
-
+import DatePicker from  "react-native-datepicker"
 export default function agenda({navigation,route}) {
        
         console.log(route.params.start);
-        const [date, setDate] = useState(new Date().dateString);
-        
+        const [date, setDate] = useState(route.params.start);
+        const startdate=route.params.start;
         return (
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Start {route.params.start}</Text>
-            <Text>End</Text>
+            <Text>Start {startdate}</Text>
+            <Text>End {date}</Text>
             <DatePicker
-              mode="datetime"
+              mode="date"
               date={date}
               confirmBtnText="Confirm"
               cancelBtnText="Cancel"
               placeholder="select date"
               onDateChange={(date) => {
-                setDate({ date });
+                setDate( date );
               }}
             />
           </View>
