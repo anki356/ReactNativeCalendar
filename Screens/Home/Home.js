@@ -6,7 +6,7 @@ import DatePicker from 'react-native-datepicker';
 export default function Home() {
     const [selectedday, setSelectedday] = useState('');
     const changedate = (day) => {
-      setSelectedday(day.dateString);
+      setSelectedday(day.dateString); 
     };
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
