@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import {  useNavigation} from "@react-navigation/native";
 import { View, Text, Button, PanResponder } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import { Calendar } from 'react-native-calendars';
-//import DatePicker from 'react-native-datepicker';
+
 import navigationstrings from '../constants/constants';
+
 export default function Home({navigation,route}) {
   const extnavigation=useNavigation();
     const [selectedday, setSelectedday] = useState('');
-    
+    const [event,setEvent]=useState([]);
     
     
   React.useEffect(() => {
     if (route.params?.text) {
-      
+     setEvent(event=>[...event,route.params?.text])
      
     }
   }, [route.params?.text]);
@@ -34,6 +35,7 @@ export default function Home({navigation,route}) {
 
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Home Screen</Text>
+        {event.map(e =><Text>{e}</Text>)}
         <Calendar
           onDayPress={(day) => {
             changedate(day);
