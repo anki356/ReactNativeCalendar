@@ -1,5 +1,6 @@
 export default {
     HOME:"Home",
-    AGENDA:"agenda"
+    AGENDA:"agenda",
+    CARDS:"cards"
     
 }
