@@ -7,7 +7,8 @@ import Homestack from './Myassets/Navigation/Homestack';
 
 function App() {
   return (
-    <View>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+       
     <Homestack/>
     </View>
   );
